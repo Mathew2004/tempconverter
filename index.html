@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>temperature Converter</title>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="LogoMakr_9Zs0Q2.png" type="image/x-icon"/>
+</head>
+<body>
+	<h1>Temperature Converter</h1>
+	
+<div id="celcius">
+	<label for="c">Celcius : </label>
+	<input type="number" name="num" placeholder="celcius....." id="c">
+</div>
+
+<div id="fer">
+	<label for="f">Fahrenheit : </label>
+	<input type="number" name="num" placeholder="fahrenheit....." id="f">
+</div>
+
+<div id="kelvin">
+	<label for="k">Kelvin : </label>
+	<input type="number" name="num" placeholder="Kelvin....." id="k">
+</div>
+
+
+<script type="text/javascript" >
+	const cel = document.querySelector('#celcius > input');
+	const fer = document.querySelector('#fer > input');
+	const kel = document.querySelector('#kelvin > input');
+
+	function round(num){
+		return Math.round(num*100)/100;
+	}
+
+	function celcius(){
+		const cTemp = parseFloat(cel.value);
+		const fTemp = (cTemp * (9/5)) + 32 ;
+		const kTemp = cTemp + 273.15;
+		fer.value = round(fTemp);
+		kel.value = round(kTemp);
+	
+}
+	function ferhenhite(){
+		const fTemp = parseFloat(fer.value);
+		const cTemp = (fTemp - 32) * 5/9;
+		const kTemp = (fTemp + 459.67) * 5/9 ;
+		cel.value = round(cTemp);
+		kel.value = round(kTemp);
+	}
+	function kelvin(){
+		const kTemp = parseFloat(kel.value);
+		const cTemp = kTemp - 273.15;
+		const fTemp = (9/5) * (kTemp - 273) + 32;
+		cel.value = round(cTemp);
+		fer.value = round(fTemp);
+	}
+
+	cel.addEventListener('input',celcius)
+	fer.addEventListener('input',ferhenhite)
+	kel.addEventListener('input',kelvin)
+</script>
+</body>
+
+</html>

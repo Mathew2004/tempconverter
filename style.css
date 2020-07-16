@@ -1,0 +1,51 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Grenze Gotisch', cursive;
+	background-color: black;
+	color: white;
+
+}
+h1{
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-size: 60px;
+	color: #ffffff;
+	font-family: Forte,cursive;
+}
+div{
+	height: 23.5vh
+}
+input[type=number]{
+	height: 80%;
+	width: 100%;
+	background-color: #111;
+	font-size: 7em;
+	color: white;
+	text-align: center;
+	border: 0;
+
+}
+label{
+	font-size: 25px;
+	margin-left: 10px;
+}
+@media only screen and (max-width: 480px){
+	label{
+		padding-bottom: 20px;
+	}
+	input[type=number]{
+	height: 80%;
+	width: 100%;
+	background-color: #111;
+	font-size: 3.4em;
+	color: white;
+	text-align: center;
+	border: 0;
+
+}
+}
